@@ -1,15 +1,20 @@
 # What do the following expressions do?
 temp_F <- temp_C * 9/5 - 32
+# it converts F to C
 rect_area <- rect_length * rect_width
+#Tgis calculates area
 
 # Fill in the question marks to complete these expressions
-????_area <- 1/2 * base * height
-cylinder_volume <- pi * ????^2 * ???
+triangle_area <- 1/2 * base * height
+cylinder_volume <- pi * r^2 * h
 
   # What are the errors in these expressions?
   speed_m_s <- distance_m * time_s
+  #divison not multiplication
 acceleration m s2 <- speed_m_s / time_s
+#the code has no underscores
 force_N < mass + acceleration_m_s2
+#the arrow is not complete and incorrect formula
 
 # The energy density of market squid is 4850 joules per gram[1]. If a 225 kg
 # Risso's dolphin needs 5 million joules of energy per day[2] and a typical
@@ -21,3 +26,10 @@ force_N < mass + acceleration_m_s2
 # [1] Price et al. 2024 https://doi.org/10.3389/fmars.2023.1345525
 # [2] Barlow et al. 2008 https://doi.org/10.3354/meps07695
 
+squid_energy <- 4850
+dolphin_energy <- 5000000
+squid_g <- 35
+squid_energy <- squid_g * squid_energy
+squid_num <- dolphin_energy/squid_energy
+squid_num
+#30 squid
