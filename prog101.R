@@ -55,6 +55,9 @@ table(aialik_interval)
 
 which.max(kefj_temperature)
 
+# coldest: 90 mins
+# hottest: 120 mins
+
 # Link to sketch
 
 # Plot the hottest day
@@ -93,17 +96,26 @@ hotday_temperature <- kefj_temperature[hotday_idx]
 
 # What patterns do you notice in time, temperature, and exposure? Do those
 # patterns match your intuition, or do they differ?
-#temp spikes when exposure is air
+  #temp spikes/dips when exposure is air or air/transition
+  #match my intuition, water as a high specific heat
+  # its temp temp is harder to change than air
 # How did Traiger et al. define extreme temperature exposure?
-#>25 C
-# <-4C
+#extreme warm: >25 C
+# extreme cold: <-4C
+  #transition periods when it was unclear whether the loggers were submerged were omitted
 # Translate their written description to code and calculate the extreme heat
 # exposure for the hottest day.
-
+hotday_exposed_idx <- which((hotday_exposure == "air"| hotday_exposure == "air/transiton")& hotday_temperature >= 25)
+hotday_exposed_idx
+hotday_interval <- hotday_datetime[2:length(hotday_datetime)]-hotday_datetime[1:length(hotday_datetime)-1]
+sum(hotday_interval[hotday_exposed_idx])
 # Compare your answer to the visualization you made. Does it look right to you?
-
+#yes
 # Repeat this process for extreme cold exposure on the coldest day.
-
+cold_exposed_idx <- which(coldday_exposure == "air"| coldday_exposure == "air/transiton")& coldday_temperature >= 25
+hotday_exposed_idx
+coldday_interval <- coldday_datetime[2:length(coldday_datetime)]-coldday_datetime[1:length(coldday_datetime)-1]
+sum(coldday_interval[coldday_exposed_idx])
 
 # Putting it together -----------------------------------------------------
 

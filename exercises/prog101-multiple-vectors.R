@@ -9,11 +9,12 @@ instrument_deployed <- instrument_deployed_h + instrument_deployed_hdec
 # using the instrument recovery times below. What units do the durations have?
 instrument_recovered_hm <- c(1600, 1920, 2015)
 
-instrument_recovered_hours <- floor(instrument_recovered_hm/100)
-instrument_recovered_hoursdec <- (instrument_recovered_hm %% 100) /60
+instrument_recovered_hours <- floor(instrument_recovered_hm / 100)
+instrument_recovered_hoursdec <- (instrument_recovered_hm %% 100) / 60
 instrument_recovered <- instrument_recovered_hours + instrument_recovered_hoursdec
-
 instrument_durations <- instrument_recovered - instrument_deployed
+
+instrument_durations
 
 # Which site had the longest duration? Use conditional indexing.
 site <- c("Santa Cruz", "Santa Rosa", "San Miguel")
